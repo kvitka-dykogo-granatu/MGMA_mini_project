@@ -1,6 +1,6 @@
 # Graph Embeddings: Node Classification and Link Prediction
 
-**Semester 2 — Massive Graph Management and Analytics (MGMA)**  
+**Massive Graph Management and Analytics (MGMA)**  
 *Completed by Olha Baliasina and Samuel Chapuis*
 
 We compare 9 embedding methods across 3 structurally different graphs, evaluating on node classification and link prediction. Each unsupervised embedding is tested with multiple downstream predictors to disentangle what the embedding learns from what the classifier exploits.
@@ -21,7 +21,7 @@ We compare 9 embedding methods across 3 structurally different graphs, evaluatin
 **Self-supervised:** DGI (Deep Graph Infomax)  
 **KG-style:** TransE, DistMult  
 **Generative:** VGAE  
-**Novel:** GRU-Walk — replaces Skip-Gram with a GRU encoder over random walks, capturing sequential dependencies that word2vec-style objectives miss
+**Novel:** GRU-Walk replaces Skip-Gram with a GRU encoder over random walks, capturing sequential dependencies that word2vec-style objectives miss
 
 ## Evaluation
 
@@ -31,9 +31,9 @@ We compare 9 embedding methods across 3 structurally different graphs, evaluatin
 
 ## Key Findings
 
-1. **The downstream predictor matters as much as the embedding** — switching LogReg → Random Forest on the same Node2Vec embedding can jump F1 by 17+ points.
+1. **The downstream predictor matters as much as the embedding.** Switching LogReg to Random Forest on the same Node2Vec embedding can improve F1 macro by 17+ points.
 2. **GRU-Walk** shows competitive performance with shallow methods while learning richer walk representations.
-3. **VGAE** dominates link prediction (it's trained on that objective) but doesn't transfer as well to node classification.
+3. **VGAE** shows best results on link prediction (it's trained on that objective) but doesn't transfer as well to node classification.
 4. **Feature-rich graphs** (LastFM with 7842-dim artist vectors) strongly favor GNNs over structure-only embeddings.
 
 ## Stack
